@@ -1,5 +1,4 @@
-````markdown
-# mac-build-op
+# MAC-Build-OpenWrt
 
 使用 Podman/Docker 容器在 macOS 上编译 OpenWrt。
 
@@ -15,9 +14,6 @@
 ## 1. 准备 OpenWrt 源码
 
 ```bash
-mkdir -p ~/test
-cd ~/test
-
 git clone https://github.com/openwrt/openwrt.git openwrt
 ````
 
