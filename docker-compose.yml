@@ -1,0 +1,19 @@
+services:
+  openwrt-build:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_ID: ${LOCAL_UID:-1000}
+        GROUP_ID: ${LOCAL_GID:-1000}
+    image: openwrt-build:latest
+    working_dir: /home/builder/openwrt
+    volumes:
+      - ${OPENWRT_DIR}:/home/builder/openwrt
+      - openwrt-ccache:/home/builder/.ccache
+    tty: true
+    stdin_open: true
+
+volumes:
+  openwrt-ccache:
